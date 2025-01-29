@@ -14,7 +14,7 @@
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 95vh;
+            min-height: 100vh;
             overflow: auto;
         }
         .container {
@@ -61,7 +61,6 @@
         .header-text {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
         }
         .header-text p {
             margin: 5px 0;
@@ -111,20 +110,12 @@
                 justify-content: flex-start;
                 padding: 0 10px;
             }
-            .header-content {
-                flex-direction: row;
-                align-items: center;
-            }
             .header img {
                 width: 60px;
                 margin-right: 10px;
             }
-            .header-text {
-                align-items: flex-start;
-            }
             .header-text p {
                 font-size: 16px;
-                text-align: left;
             }
             .chatbot-container {
                 border-width: 0;
@@ -143,7 +134,7 @@
                 <img src="https://github.com/BarOfSoapOnWednesday/BEAR-Chatbot/blob/main/BEAR.jpeg?raw=true" alt="HeartBug Image">
                 <div class="header-text">
                     <p>Bug Enrolment Analysis Report (BEAR)</p>
-                    <p><< Jan 2023 - Now >></p>
+                    <p>&lt;&lt; Jan 2023 - Now &gt;&gt;</p>
                 </div>
             </div>
         </div>
@@ -154,9 +145,9 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"></script>
-    <script>
-        Chatbot.init({
+    <script type="module">
+        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js";
+        Chatbot.initFull({
             chatflowid: "8596a810-0480-4e1c-8812-ffe8860dcb3f",
             apiHost: "https://flowise-9t13.onrender.com",
         });
