@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>BEAR</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
@@ -14,7 +14,7 @@
             margin: 0;
             padding: 0;
             width: 100%;
-            min-height: 100vh;
+            height: 95vh;
             overflow: auto;
         }
         .container {
@@ -61,6 +61,7 @@
         .header-text {
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
         }
         .header-text p {
             margin: 5px 0;
@@ -90,7 +91,6 @@
         .chatbot-content {
             flex: 1;
             overflow-y: auto;
-            max-height: 80vh; /* Fixes overflow issue on small screens */
             padding: 15px;
             margin: 5px;
             border: 2px solid rgba(0, 255, 255, 0.3);
@@ -111,12 +111,20 @@
                 justify-content: flex-start;
                 padding: 0 10px;
             }
+            .header-content {
+                flex-direction: row;
+                align-items: center;
+            }
             .header img {
                 width: 60px;
                 margin-right: 10px;
             }
+            .header-text {
+                align-items: flex-start;
+            }
             .header-text p {
                 font-size: 16px;
+                text-align: left;
             }
             .chatbot-container {
                 border-width: 0;
@@ -124,7 +132,6 @@
             .chatbot-content {
                 padding: 10px;
                 margin: 2px;
-                max-height: 70vh; /* Adjust for better mobile usability */
             }
         }
     </style>
@@ -133,32 +140,24 @@
     <div class="container">
         <div class="header">
             <div class="header-content">
-                <img src="https://raw.githubusercontent.com/BarOfSoapOnWednesday/BEAR-Chatbot/main/BEAR.jpeg" alt="HeartBug Image">
+                <img src="https://github.com/BarOfSoapOnWednesday/BEAR-Chatbot/blob/main/BEAR.jpeg?raw=true" alt="HeartBug Image">
                 <div class="header-text">
                     <p>Bug Enrolment Analysis Report (BEAR)</p>
-                    <p>&lt;&lt; Jan 2023 - Now &gt;&gt;</p>
+                    <p><< Jan 2023 - Now >></p>
                 </div>
             </div>
         </div>
         <div class="chatbot-container">
             <div class="chatbot-content" id="chatbot-content">
-                <flowise-fullchatbot></flowise-fullchatbot>
-            </div>
-        </div>
-    </div>
-    <script type="module">
-        (async () => {
-            try {
-                const { Chatbot } = await import("https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js");
-                Chatbot.init({
-                    chatflowid: "accabce0-adb9-4d9e-87f7-32c3f26ef4c9",
-                    apiHost: "https://flowise-jam.onrender.com",
-                });
-            } catch (error) {
-                console.error("Error loading Flowise Chatbot:", error);
-            }
-        })();
-    </script>
+            <flowise-fullchatbot></flowise-fullchatbot>
+<script type="module">
+    		import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+   	 	Chatbot.initFull({
+        			chatflowid: "8596a810-0480-4e1c-8812-ffe8860dcb3f",
+        			apiHost: "https://flowise-9t13.onrender.com",
+    		})
+</script>
 </body>
 </html>
+
 
